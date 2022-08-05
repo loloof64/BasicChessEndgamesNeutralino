@@ -1,0 +1,10 @@
+{
+    "name": "basic-chess-endgame",
+    "description": "Generate a chess endgame and play it against your computer.",
+    "version": "0.1.0",
+    "author": "Laurent Bernabe <laurent.bernabe@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "serve:neu": "neu run --frontend-lib-dev -- --window-enable-inspector"
+    }
+}
