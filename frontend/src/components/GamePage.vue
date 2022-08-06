@@ -4,6 +4,9 @@
 
 <template>
     <div id="root">
+         <h1 class="text-3xl font-bold bg-sky-600">
+            Hello world!
+        </h1>
         <loloof64-chessboard 
             size="450"
         />

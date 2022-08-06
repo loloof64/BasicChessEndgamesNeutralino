@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import './index.css';   
 
 import '@loloof64/chessboard-component/dist'
 
