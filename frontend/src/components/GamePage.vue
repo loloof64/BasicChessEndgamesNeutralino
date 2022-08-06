@@ -1,5 +1,8 @@
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n();
 
 const board = ref();
 const boardReversed = ref(false);
@@ -14,10 +17,10 @@ function toggleBoardReversed() {
 
 async function purposeStartGame() {
     let button = await Neutralino.os
-            .showMessageBox('Start a new game ?',
-                            'Do you want to start a new game ?',
-                            'YES_NO', 'QUESTION');
-    if(button == 'YES') {
+        .showMessageBox(t('pages.game.dialogs.startNewGameTitle'),
+            t('pages.game.dialogs.startNewGameMessage'),
+            'YES_NO', 'QUESTION');
+    if (button == 'YES') {
         doStartNewGame();
     }
 }
@@ -25,21 +28,12 @@ async function purposeStartGame() {
 
 <template>
     <div class="box-border w-full h-full flex flex-col justify-center items-center">
-         <div class="flex flex-row justify-around items-center shadow-lg bg-gray-300 p-2">
-            <img src="@/assets/vectors/start.svg" alt="start game"
-                class="w-10 h-10 mx-2"
-                @click="purposeStartGame"
-            />
-            <img src="@/assets/vectors/reverse.svg" alt="reverse board"
-                class="w-10 h-10 mx-2"
-                @click="toggleBoardReversed"
-            />
+        <div class="flex flex-row justify-around items-center shadow-lg bg-gray-300 p-2">
+            <img src="@/assets/vectors/start.svg" :alt="t('pages.game.buttons.startGameAlt')" class="w-10 h-10 mx-2"
+                @click="purposeStartGame" />
+            <img src="@/assets/vectors/reverse.svg" :alt="t('pages.game.buttons.reverseBoardAlt')"
+                class="w-10 h-10 mx-2" @click="toggleBoardReversed" />
         </div>
-        <loloof64-chessboard
-            ref="board"
-            size="450"
-            :reversed="boardReversed"
-            class="pt-6"
-        />
+        <loloof64-chessboard ref="board" size="450" :reversed="boardReversed" class="pt-6" />
     </div>
 </template>
