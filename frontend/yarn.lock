@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.4.tgz#6774231779dd700e0af29f6ad8d479582d7ce5ef"
   integrity sha512-FDge0dFazETFcxGw/EXzOkN8uJp0PC7Qbm+Pe9T+av2zlBpOgunFHkQPPn+eRuClU73JF+98D531UgayY89tow==
 
+"@loloof64/chessboard-component@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@loloof64/chessboard-component/-/chessboard-component-0.25.0.tgz#6c906de1d5ebd846bd2cf7a5cb4354a469b8c6a2"
+  integrity sha512-NnalDHSCYBvmOwBKYoaaxayP4M6wv6RCcueIhq1EsJh7zpkaNZC2edXZYwvj5KUqp+MeLm+JFTe0EoWvfUVSbA==
+
 "@types/node@^17.0.38":
   version "17.0.38"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.38.tgz#f8bb07c371ccb1903f3752872c89f44006132947"

@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import '@loloof64/chessboard-component/dist'
+
 createApp(App).mount('#app')
 
 ;(async () => {

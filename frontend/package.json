@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@loloof64/chessboard-component": "^0.25.0",
     "add": "^2.0.6",
     "vue": "^3.2.25",
     "yarn": "^1.22.19"
