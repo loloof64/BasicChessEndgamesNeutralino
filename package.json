@@ -5,7 +5,8 @@
     "author": "Laurent Bernabe <laurent.bernabe@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "serve:neu": "neu run --frontend-lib-dev -- --window-enable-inspector"
+        "serve:neu": "neu run --frontend-lib-dev -- --window-enable-inspector",
+        "build:neu": "neu build --release"
     },
     "dependencies": {}
 }

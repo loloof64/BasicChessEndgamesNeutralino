@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import { useI18n } from 'vue-i18n'
 
+const EMPTY_BOARD = '8/8/8/8/8/8/8/8 w - - 0 1'
+
 const { t } = useI18n();
 
 const board = ref();
@@ -16,6 +18,10 @@ function toggleBoardReversed() {
 }
 
 async function purposeStartGame() {
+    if (board.value.getCurrentPosition() === EMPTY_BOARD) {
+        doStartNewGame();
+        return;
+    }
     let button = await Neutralino.os
         .showMessageBox(t('pages.game.dialogs.startNewGameTitle'),
             t('pages.game.dialogs.startNewGameMessage'),

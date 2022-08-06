@@ -23,4 +23,13 @@ const i18n = createI18n({
 });
 
 createApp(App).use(i18n).mount("#app");
-Neutralino.init();
+
+(async () => {
+  if (!window.NL_PORT) {
+      const config = await import('./auth_info.json') // Make sure you successfully created a symlink for the auth_info (step 6 in README)
+      window.NL_PORT = config.port
+      window.NL_TOKEN = config.accessToken
+  }
+  
+  Neutralino.init()
+})()
