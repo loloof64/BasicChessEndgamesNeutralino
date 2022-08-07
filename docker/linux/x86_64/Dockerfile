@@ -19,4 +19,20 @@ RUN yarn
 RUN yarn build
 WORKDIR /work/BasicChessEndgamesNeutralino
 RUN yarn build:neu
-#RUN yarn bundle:appimage
+
+RUN mkdir -p BasicChessEndgames.AppDir/usr/share/applications
+RUN mkdir -p BasicChessEndgames.AppDir/usr/bin
+RUN mkdir -p BasicChessEndgames.AppDir/usr/share/icons/hicolor/256x256/apps
+RUN cp BasicChessEndgames.desktop BasicChessEndgames.AppDir/usr/share/applications
+RUN cp frontend/public/icon.png BasicChessEndgames.AppDir/usr/share/icons/hicolor/256x256/apps
+RUN cp dist/basic-chess-endgames/basic-chess-endgames-linux_x64 BasicChessEndgames.AppDir/usr/bin
+RUN cp dist/basic-chess-endgames/resources.neu BasicChessEndgames.AppDir/usr/bin
+WORKDIR /work/BasicChessEndgamesNeutralino/BasicChessEndgames.AppDir
+RUN ln -s usr/bin/basic-chess-endgames-linux_x64 .
+RUN ln -s usr/share/icons/hicolor/256x256/apps/icon.png .
+
+WORKDIR /work/BasicChessEndgamesNeutralino
+RUN wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+RUN chmod +x appimagetool-x86_64.AppImage
+RUN chmod +x linuxdeploy-x86_64.AppImage
