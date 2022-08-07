@@ -35,6 +35,8 @@ RUN chmod 777 BasicChessEndgames.AppDir/BasicChessEndgames.desktop
 WORKDIR /work/BasicChessEndgamesNeutralino/BasicChessEndgames.AppDir
 RUN cp usr/bin/basic-chess-endgames-linux_x64 .
 RUN ln -s usr/share/icons/hicolor/256x256/apps/icon.png
+
+WORKDIR /work/BasicChessEndgamesNeutralino/
 RUN cp AppRun BasicChessEndgames.AppDir/AppRun
 RUN chmod 777 BasicChessEndgames.AppDir/AppRun
 
