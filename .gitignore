@@ -20,6 +20,7 @@ neutralino.js
 
 # AppImage
 *.AppImage
+/built_appimage/
 
 # Node JS
 /node_modules/

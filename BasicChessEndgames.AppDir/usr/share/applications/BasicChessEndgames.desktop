@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=0.1.0
+Type=Application
+Terminal=false
+Exec=AppRun
+Name=Basic chess endgames
+Icon=icon
+Categories=Game Utility
