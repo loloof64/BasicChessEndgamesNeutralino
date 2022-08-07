@@ -23,13 +23,6 @@ Generate a chess endgame and play it against your computer.
 
 The built binary will be in the **dist** folder.
 
-### Build AppImage (For linux only)
-
-1. Build application as in described in previous step
-2. Run `yarn bundle:appimage`from the project root folder.
-
-The built binary will be in the project root folder.
-
 ### Build AppImage with Docker (For linux only)
 
 1. Install docker (you can use Personal version)
