@@ -28,7 +28,7 @@ The built binary will be in the **dist** folder.
 1. Build application as in described in previous step
 2. Run `yarn bundle:appimage`from the project root folder.
 
-The built binary will be in the **dist** folder.
+The built binary will be in the project root folder.
 
 ## Credits
 
