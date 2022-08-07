@@ -6,3 +6,4 @@ Exec=AppRun
 Name=Basic chess endgames
 Icon=icon
 Categories=Game;Utility;
+X-AppImage-Version=0.1.0
