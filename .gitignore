@@ -17,3 +17,9 @@ neutralino.js
 
 # Github files
 .github
+
+# AppImage
+*.AppImage
+
+# Node JS
+/node_modules/

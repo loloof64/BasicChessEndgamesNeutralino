@@ -6,7 +6,11 @@
     "license": "MIT",
     "scripts": {
         "serve:neu": "neu run --frontend-lib-dev -- --window-enable-inspector",
-        "build:neu": "neu build"
+        "build:neu": "neu build",
+        "bundle:appimage": "node build-appimage.js"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "devDependencies": {
+        "neutralino-appimage-bundler": "^1.3.4"
+    }
 }
