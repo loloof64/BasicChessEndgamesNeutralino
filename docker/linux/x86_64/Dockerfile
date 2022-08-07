@@ -40,12 +40,12 @@ WORKDIR /work/BasicChessEndgamesNeutralino/
 RUN cp AppRun BasicChessEndgames.AppDir/AppRun
 RUN chmod 777 BasicChessEndgames.AppDir/AppRun
 
-RUN wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-RUN chmod +x appimagetool-x86_64.AppImage
+RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+RUN chmod +x linuxdeploy-x86_64.AppImage
 
-RUN ./appimagetool-x86_64.AppImage --appimage-extract
+RUN ./linuxdeploy-x86_64.AppImage --appimage-extract
 WORKDIR /work/BasicChessEndgamesNeutralino/squashfs-root/usr/bin
-RUN ./appimagetool ../../../BasicChessEndgames.AppDir/
+RUN ./linuxdeploy --appdir ../../../BasicChessEndgames.AppDir/ -d ../../../BasicChessEndgames.AppDir/BasicChessEndgames.desktop -i ../../../BasicChessEndgames.AppDir/icon.png -o "appimage"
 
 WORKDIR /work/BasicChessEndgamesNeutralino
 RUN mv squashfs-root/usr/bin/*.AppImage . 
