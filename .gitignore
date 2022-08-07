@@ -24,3 +24,6 @@ neutralino.js
 
 # Node JS
 /node_modules/
+
+# Misc
+/squashfs-root
