@@ -36,7 +36,7 @@ const bundler = new Bundler({
     includeLibraries: true,
 
     // Path to the appimage to save
-    output: path.join(__dirname, 'BasicChessEndgames.AppImage'),
+    output: path.join(__dirname, 'dist/BasicChessEndgames.AppImage'),
 
     /**
      * (optional) If set to true, the AppImage will run only with root privileges

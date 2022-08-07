@@ -16,6 +16,20 @@ Generate a chess endgame and play it against your computer.
 1. Open a terminal in **frontend** folder :  execute `yarn serve`.
 2. Open another terminal in the root folder of the project: execute `yarn serve:neu`.
 
+### Build
+
+1. Build in **frontend** folder : `yarn build`
+2. Build in project root folder : `yarn build:neu`
+
+The built binary will be in the **dist** folder.
+
+### Build AppImage
+
+1. Build application as in described in previous step
+2. Run `yarn bundle:appimage`from the project root folder.
+
+The built binary will be in the **dist** folder.
+
 ## Credits
 
 ### Vectors
