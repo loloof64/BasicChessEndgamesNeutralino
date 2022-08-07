@@ -22,10 +22,6 @@ const i18n = createI18n({
   messages,
 });
 
-window.addEventListener("contextmenu", function(event) {
-  event.preventDefault();
-}, {passive: false});
-
 createApp(App).use(i18n).mount("#app");
 
 Neutralino.init()
