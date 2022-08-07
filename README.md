@@ -13,9 +13,8 @@ Generate a chess endgame and play it against your computer.
 
 ### Run
 
-1. Create a file **auth_info.json** in a folder **.tmp** at the root of the project with content ̀`{}`. Or "clear it" if it already exists. This file must be empty json before trying to run.
-2. Open a terminal in **frontend** folder :  execute `yarn serve`.
-3. Open another terminal in the root folder of the project: execute `yarn serve:neu`.
+1. Open a terminal in **frontend** folder :  execute `yarn serve`.
+2. Open another terminal in the root folder of the project: execute `yarn serve:neu`.
 
 ## Credits
 
