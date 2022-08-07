@@ -1,4 +1,5 @@
 FROM ubuntu:18.04
+ENV VERSION=0.1.0
 
 RUN apt update
 RUN apt install git curl wget -y
@@ -40,7 +41,7 @@ RUN chmod +x linuxdeploy-x86_64.AppImage
 
 RUN ./linuxdeploy-x86_64.AppImage --appimage-extract
 WORKDIR /work/BasicChessEndgamesNeutralino/squashfs-root/usr/bin
-# RUN ./linuxdeploy --appdir ../../../BasicChessEndgames.AppDir/ -d ../../../BasicChessEndgames.AppDir/usr/share/applications/BasicChessEndgames.desktop -i ../../../BasicChessEndgames.AppDir/icon.png -o "appimage"
+RUN ./linuxdeploy --appdir ../../../BasicChessEndgames.AppDir/ -d ../../../BasicChessEndgames.AppDir/usr/share/applications/BasicChessEndgames.desktop -i ../../../BasicChessEndgames.AppDir/icon.png -o "appimage"
 
-
-#RUN ./appimagetool-x86_64.AppImage --appimage-extract
+WORKDIR /work/BasicChessEndgamesNeutralino
+RUN mv squashfs-root/usr/bin/*.AppImage . 
