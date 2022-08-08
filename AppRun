@@ -10,10 +10,11 @@ fi
 
 export GDK_BACKEND=x11
 export PATH="${APPDIR}"
-#export XDG_DATA_DIRS="./share/:/usr/share/gnome:/usr/local/share/:/usr/share/:${XDG_DATA_DIRS}"
 export LD_LIBRARY_PATH="${APPDIR}/usr/lib"
 export XDG_DATA_DIRS="${APPDIR}"/usr/share/
 export GSETTINGS_SCHEMA_DIR="${APPDIR}/usr/share/glib-2.0/schemas"
+
+exec ldconfig
 
 cd "$APPDIR"
 
