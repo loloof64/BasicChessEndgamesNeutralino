@@ -5,6 +5,7 @@ ENV VERSION=0.1.0
 RUN apt update
 RUN apt install git curl wget -y
 RUN apt install libwebkit2gtk-4.0-37 libgpgme-dev desktop-file-utils zsync appstream -y
+RUN apt install gvfs-libs glib-networking -y
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt install nodejs -y
 RUN npm i -g yarn
@@ -42,6 +43,8 @@ RUN ln -s usr/share/icons/hicolor/256x256/apps/icon.png
 WORKDIR /work/BasicChessEndgamesNeutralino/
 RUN cp AppRun BasicChessEndgames.AppDir/AppRun
 RUN chmod 777 BasicChessEndgames.AppDir/AppRun
+RUN mkdir -p BasicChessEndgames.AppDir/usr/share/glib-2.0
+RUN cp -R /usr/share/glib-2.0/schemas BasicChessEndgames.AppDir/usr/share/glib-2.0
 
 # Fetching linuxdeploy
 RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
@@ -52,10 +55,15 @@ RUN ./linuxdeploy-x86_64.AppImage --appimage-extract
 WORKDIR /work/BasicChessEndgamesNeutralino/squashfs-root/usr/bin
 RUN ./linuxdeploy --appdir ../../../BasicChessEndgames.AppDir/ -d ../../../BasicChessEndgames.AppDir/BasicChessEndgames.desktop -i ../../../BasicChessEndgames.AppDir/icon.png -o "appimage"
 
-# Symlink libwebkit2gtk
+# Symlink needed libraries
 WORKDIR /work/BasicChessEndgamesNeutralino/BasicChessEndgames.AppDir
 RUN mkdir -p usr/lib/x86_64-linux-gnu/
 RUN ln -s usr/lib/libwebkit2gtk-4.0.so.37 usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so.37
+RUN mkdir -p usr/lib/x86_64-linux-gnu/gio/modules/
+RUN cp /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+RUN cp /usr/lib/x86_64-linux-gnu/gio/modules/libgiolibproxy.so usr/lib/x86_64-linux-gnu/gio/modules/libgiolibproxy.so
+RUN cp /usr/lib/x86_64-linux-gnu/gio/modules/libgiognomeproxy.so usr/lib/x86_64-linux-gnu/gio/modules/libgiognomeproxy.so
+RUN cp /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
 
 # Second time running linuxdeploy in order to integrate the symlink
 WORKDIR /work/BasicChessEndgamesNeutralino/squashfs-root/usr/bin

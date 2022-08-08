@@ -23,7 +23,7 @@ Generate a chess endgame and play it against your computer.
 
 The built binary will be in the **dist** folder.
 
-### Build AppImage with Docker (For linux only)
+### Build AppImage with Docker (For linux only) (Keep at least 2Go on your HDD for the Docker image)
 
 1. Install docker (you can use Personal version)
 2. Run command `docker build -t appimage_building docker/linux/x86_64` (Or replace **appimage_building** with the tag of your choice) from the root of the project.
