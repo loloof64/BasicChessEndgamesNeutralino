@@ -10,8 +10,7 @@
     "@loloof64/chessboard-component": "^0.25.0",
     "add": "^2.0.6",
     "vue": "^3.2.37",
-    "vue-i18n": "9",
-    "yarn": "^1.22.19"
+    "vue-i18n": "9"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^6.0.0",

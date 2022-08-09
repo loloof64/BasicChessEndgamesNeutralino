@@ -23,16 +23,6 @@ Generate a chess endgame and play it against your computer.
 
 The built binary will be in the **dist** folder.
 
-### Build AppImage with Docker (For linux only) (Keep at least 2Go on your HDD for the Docker image)
-
-1. Install docker (you can use Personal version)
-2. Run command `docker build -t appimage_building docker/linux/x86_64` (Or replace **appimage_building** with the tag of your choice) from the root of the project.
-3. Create a folder built_appimage in the root of the project
-4. Run command `docker run -v $PWD/built_appimage:/appimages --rm -ti appimage_building` (from the root of the project) but **don't close the resulting terminal until you've done all the steps**, as it the associated container will be removed on exit
-5. From the new shell, run `cp BasicChessEndgames*.AppImage /appimages`
-6. You can close the new shell now, exiting the new Docker container.
-7. Finally, have fun with your AppImage !
-
 ## Credits
 
 ### Vectors
