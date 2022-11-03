@@ -8,5 +8,7 @@
         "serve:neu": "neu run --frontend-lib-dev -- --window-enable-inspector",
         "build:neu": "neu build"
     },
-    "devDependencies": {}
+    "dependencies": {
+        "@neutralinojs/neu": "^9.3.1"
+    }
 }

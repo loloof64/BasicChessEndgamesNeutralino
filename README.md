@@ -4,12 +4,11 @@ Generate a chess endgame and play it against your computer.
 
 ## Development mode
 
-### Setup
+### Setup (with modern yarn)
 
-1. `yarn global add @neutralinojs/neu`
-2. Setup the "backend" part: `neu update`
-3. Move into the `frontend` folder: `cd frontend`
-4. Setup the frontend part: `yarn && yarn run build`
+1. Setup the "backend" part: `yarn dlx @neutralinojs/neu update`
+2. Move into the `frontend` folder: `cd frontend`
+3. Setup the frontend part: `yarn && yarn run build`
 
 ### Run
 
