@@ -36,7 +36,7 @@ jobs:
             dist/basic-chess-endgames/resources.neu
   build_appimage:
     needs: build_project
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get neutralino artifact
         uses: actions/download-artifact@v3
