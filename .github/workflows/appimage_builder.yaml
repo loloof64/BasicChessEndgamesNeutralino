@@ -25,11 +25,11 @@ jobs:
       - name: Build backend
         run: npm run build:neu
       - name: Publish Neutralino binary
-          id: publish-neutralino
-          run: find bin/basic-chess-endgames-linux_x64 -type f -execdir "echo neutralino_binary={} >> $GITHUB_OUTPUT" ';'
+        id: publish-neutralino
+        run: find bin/basic-chess-endgames-linux_x64 -type f -execdir "echo neutralino_binary={} >> $GITHUB_OUTPUT" ';'
       - name: Publish project's built code
-          id: publish-project
-          run: find dist/basic-chess-endgames/*(-linux_x64|\.neu)$ -type f -execdir "echo built_project={} >> $GITHUB_OUTPUT" ';'
+        id: publish-project
+        run: find dist/basic-chess-endgames/*(-linux_x64|\.neu)$ -type f -execdir "echo built_project={} >> $GITHUB_OUTPUT" ';'
   build_appimage:
     needs: build_project
     runs-on: ubuntu_latest
