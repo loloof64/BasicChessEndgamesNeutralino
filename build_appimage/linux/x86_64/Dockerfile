@@ -1,4 +1,5 @@
 FROM ubuntu:20.04
+ENV VERSION=0.1.0
 
 # base setup
 ENV DEBIAN_FRONTEND noninteractive
@@ -7,24 +8,17 @@ RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y --no-install-recommends libgtk-3-dev wget git curl libc6 xz-utils
 RUN apt-get install -y --no-install-recommends gvfs-libs glib-networking libgnutls30
 RUN apt-get install -y --no-install-recommends ca-certificates sudo
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN apt-get install -y --no-install-recommends nodejs
 ENV DEBIAN_FRONTEND teletype
-ADD sudoers.txt /etc/sudoers
-RUN chmod 0440 /etc/sudoers
-RUN  useradd -m developer && echo "developer:developer" |  chpasswd
-USER developer
-WORKDIR /home/developer
 
-# setup NodeJS and Neutralino
-RUN wget https://nodejs.org/dist/v18.12.0/node-v18.12.0-linux-x64.tar.xz
-RUN tar -xf node-v18.12.0-linux-x64.tar.xz
-RUN sudo mkdir -p /usr/local/nodejs
-RUN sudo mv node-v18.12.0-linux-x64/* /usr/local/nodejs
-ENV PATH=$PATH:/usr/local/nodejs/bin
+# setup Neutralino
 RUN npm i -g @neutralinojs/neu
 
 # project and dependencies
 RUN git clone https://github.com/loloof64/BasicChessEndgamesNeutralino.git
 WORKDIR /BasicChessEndgamesNeutralino
+RUN node -v
 RUN npm i
 RUN neu update
 
