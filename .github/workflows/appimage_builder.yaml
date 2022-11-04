@@ -11,8 +11,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Install NodeJS
         uses: actions/setup-node@v3
+      - name: Install Neutralino
+        run: npm i -g @neutralinojs/neu
+      - name: Setup Neutralino backend
+        run: neu update
       - name: Install dependencies
-        run: cd frontend && npm install
+        run: cd frontend && npm i
       - name: Build frontend
         run: cd frontend && npm run build
       - name: Build backend
