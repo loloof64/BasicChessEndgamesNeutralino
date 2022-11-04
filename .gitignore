@@ -15,9 +15,6 @@ neutralino.js
 # Temporary files
 .tmp
 
-# Github files
-.github
-
 # AppImage
 *.AppImage
 /built_appimage/
