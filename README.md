@@ -4,21 +4,22 @@ Generate a chess endgame and play it against your computer.
 
 ## Development mode
 
-### Setup (with modern yarn)
+### Setup
 
-1. Setup the "backend" part: `yarn dlx @neutralinojs/neu update`
-2. Move into the `frontend` folder: `cd frontend`
-3. Setup the frontend part: `yarn && yarn run build`
+1. Install neutralino globally: `npm i -g @neutralinojs/neu`
+2. Setup the "backend" part: `neu update`
+3. Move into the `frontend` folder: `cd frontend`
+4. Setup the frontend part: `npm i && npm run build`
 
 ### Run
 
-1. Open a terminal in **frontend** folder :  execute `yarn serve`.
-2. Open another terminal in the root folder of the project: execute `yarn serve:neu`.
+1. Open a terminal in **frontend** folder :  execute `npm run serve`.
+2. Open another terminal in the root folder of the project: execute `npm run serve:neu`.
 
 ### Build
 
-1. Build in **frontend** folder : `yarn build`
-2. Build in project root folder : `yarn build:neu`
+1. Build in **frontend** folder : `npm run build`
+2. Build in project root folder : `npm run build:neu`
 
 The built binary will be in the **dist** folder.
 
