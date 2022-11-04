@@ -28,7 +28,7 @@ The built binary will be in the **dist** folder.
 
 1. Install docker (you can use Personal version)
 2. Create a folder output_dir at the root of the project
-3. Run command `docker run --mount type=bind,src="$(pwd)/output_dir",target=/output_dir build_appimage/linux/x86_64`.
+3. Run command `docker run --mount type=bind,src="$(pwd)"/output_dir,target=/output_dir build_appimage/linux/x86_64`.
 4. Finally, have fun with your AppImage in the `output_dir` directory !
 
 ## Credits
