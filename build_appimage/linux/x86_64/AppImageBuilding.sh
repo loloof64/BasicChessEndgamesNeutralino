@@ -21,8 +21,9 @@ mkdir -p BasicChessEndgames.AppDir/usr/share/glib-2.0
 cp -R /usr/share/glib-2.0/schemas BasicChessEndgames.AppDir/usr/share/glib-2.0
 
 # Fetching linuxdeploy
+
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-chmod +x linuxdeploy-x86_64.AppImage
+chmod +x ./linuxdeploy-x86_64.AppImage
 
 # First time running linuxdeploy in order to get shared libraries
 ./linuxdeploy-x86_64.AppImage --appimage-extract

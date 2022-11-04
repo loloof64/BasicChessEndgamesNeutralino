@@ -26,3 +26,4 @@ neutralino.js
 /squashfs-root
 
 .yarn
+/output_dir
