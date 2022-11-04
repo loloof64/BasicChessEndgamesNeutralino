@@ -27,5 +27,6 @@ WORKDIR /work/BasicChessEndgamesNeutralino
 RUN yarn build:neu
 
 # Building AppDir
-RUN chmod +x AppImageBuilding.sh
-CMD [ "sh", "AppImageBuilding.sh" ]
+RUN ls -la build_appimage/linux/x86_64
+RUN chmod +x build_appimage/linux/x86_64/AppImageBuilding.sh
+CMD [ "sh", "build_appimage/linux/x86_64/AppImageBuilding.sh" ]
