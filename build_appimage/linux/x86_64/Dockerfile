@@ -8,9 +8,10 @@ RUN apt-get install -y --no-install-recommends libgtk-3-dev wget git curl
 RUN apt-get install -y --no-install-recommends gvfs-libs glib-networking libgnutls30
 RUN apt-get install -y --no-install-recommends ca-certificates sudo
 ENV DEBIAN_FRONTEND teletype
-RUN useradd -ms /bin/bash developer
-USER developer
-WORKDIR /home/developer
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN useradd -ms /bin/bash docker
+USER docker
+WORKDIR /home/docker
 
 # setup NodeJS and Neutralino
 RUN wget https://nodejs.org/dist/v18.12.0/node-v18.12.0-linux-x64.tar.xz
