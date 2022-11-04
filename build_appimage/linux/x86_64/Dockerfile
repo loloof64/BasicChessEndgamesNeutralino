@@ -30,7 +30,7 @@ RUN yarn build:neu
 RUN mkdir -p BasicChessEndgames.AppDir/usr/share/applications
 RUN mkdir -p BasicChessEndgames.AppDir/usr/bin
 RUN mkdir -p BasicChessEndgames.AppDir/usr/share/icons/hicolor/256x256/apps
-RUN cp BasicChessEndgames.desktop BasicChessEndgames.AppDir
+RUN cp build_appimage/linux/x86_64/BasicChessEndgames.desktop BasicChessEndgames.AppDir
 RUN cp frontend/public/icon.png BasicChessEndgames.AppDir/usr/share/icons/hicolor/256x256/apps
 RUN cp dist/basic-chess-endgames/basic-chess-endgames-linux_x64 BasicChessEndgames.AppDir/usr/bin
 RUN cp dist/basic-chess-endgames/resources.neu BasicChessEndgames.AppDir
@@ -41,7 +41,7 @@ WORKDIR /work/BasicChessEndgamesNeutralino/BasicChessEndgames.AppDir
 RUN cp usr/bin/basic-chess-endgames-linux_x64 .
 RUN ln -s usr/share/icons/hicolor/256x256/apps/icon.png
 WORKDIR /work/BasicChessEndgamesNeutralino/
-RUN cp AppRun BasicChessEndgames.AppDir/AppRun
+RUN cp build_appimage/linux/x86_64/AppRun BasicChessEndgames.AppDir/AppRun
 RUN chmod 777 BasicChessEndgames.AppDir/AppRun
 RUN mkdir -p BasicChessEndgames.AppDir/usr/share/glib-2.0
 RUN cp -R /usr/share/glib-2.0/schemas BasicChessEndgames.AppDir/usr/share/glib-2.0
