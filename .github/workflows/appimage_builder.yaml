@@ -6,6 +6,8 @@ on:
 jobs:
   build_project:
     runs-on: ubuntu-latest
+    container:
+      image: loloof64/ubuntu_gtk_3_dev:latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -37,6 +39,8 @@ jobs:
   build_appimage:
     needs: build_project
     runs-on: ubuntu-latest
+    container:
+      image: loloof64/ubuntu_gtk_3_dev:latest
     steps:
       - name: Get neutralino artifact
         uses: actions/download-artifact@v3
