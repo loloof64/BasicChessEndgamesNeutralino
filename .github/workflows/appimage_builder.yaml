@@ -6,9 +6,6 @@ on:
 jobs:
   build_project:
     runs-on: ubuntu-latest
-    outputs:
-      neutralino_binary: ${{ steps.publish-neutralino.outputs.neutralino_binary }}
-      built_project: ${{ steps.publish-project.outputs.built_project }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -24,15 +21,30 @@ jobs:
         run: cd frontend && npm run build
       - name: Build backend
         run: npm run build:neu
-      - name: Publish Neutralino binary
-        id: publish-neutralino
-        run: find bin/neutralino-linux_x64 -type f -execdir "echo neutralino_binary={} >> $GITHUB_OUTPUT" ';'
-      - name: Publish project's built code
-        id: publish-project
-        run: find dist/basic-chess-endgames/* -type f -execdir "echo built_project={} >> $GITHUB_OUTPUT" ';'
+      - name: Publish Neutralino artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: neutralino_binary
+          path: |
+            bin/neutralino-linux_x64
+      - name: Publish built project artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: built_project
+          path: |
+            dist/basic-chess-endgames/basic-chess-endgames-linux_x64
+            dist/basic-chess-endgames/resources.neu
   build_appimage:
     needs: build_project
     runs-on: ubuntu_latest
     steps:
+      - name: Get neutralino artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: neutralino_binary
+      - name: Get built project artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: built_project
       - name: Print content
         run: ls
