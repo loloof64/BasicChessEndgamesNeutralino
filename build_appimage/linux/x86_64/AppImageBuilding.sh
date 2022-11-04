@@ -26,6 +26,7 @@ wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/lin
 chmod +x ./linuxdeploy-x86_64.AppImage
 
 # First time running linuxdeploy in order to get shared libraries
+ls -la
 ./linuxdeploy-x86_64.AppImage --appimage-extract
 cd /work/BasicChessEndgamesNeutralino/squashfs-root/usr/bin
 ./linuxdeploy --appdir ../../../BasicChessEndgames.AppDir/ -d ../../../BasicChessEndgames.AppDir/BasicChessEndgames.desktop -i ../../../BasicChessEndgames.AppDir/icon.png -o "appimage"
