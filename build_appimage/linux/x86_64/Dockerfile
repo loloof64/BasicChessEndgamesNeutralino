@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y --no-install-recommends libgtk-3-dev wget git curl
 RUN apt-get install -y --no-install-recommends gvfs-libs glib-networking libgnutls30
-RUN apt-get install -y --no-install-recommends ca-certificates
+RUN apt-get install -y --no-install-recommends ca-certificates sudo
 ENV DEBIAN_FRONTEND teletype
 RUN useradd -ms /bin/bash developer
 USER developer
