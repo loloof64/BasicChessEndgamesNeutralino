@@ -9,7 +9,7 @@ RUN apt-get install -y --no-install-recommends gvfs-libs glib-networking libgnut
 RUN apt-get install -y --no-install-recommends ca-certificates sudo
 ENV DEBIAN_FRONTEND teletype
 ADD sudoers.txt /etc/sudoers
-RUN  useradd -m developer && echo "developer:developer" |  chpasswd &&  usermod -aG wheel developer
+RUN  useradd -m developer && echo "developer:developer" |  chpasswd
 USER developer
 WORKDIR /home/developer
 
