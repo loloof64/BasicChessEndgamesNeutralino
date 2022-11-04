@@ -27,9 +27,10 @@ The built binary will be in the **dist** folder.
 ### Build AppImage with Docker (For linux x86_64 only) (Keep at least 2Go on your HDD for the Docker image)
 
 1. Install docker (you can use Personal version)
-2. Create a folder output_dir at the root of the project
-3. Run command `docker run --mount type=bind,src="$(pwd)"/output_dir,target=/output_dir build_appimage/linux/x86_64`.
-4. Finally, have fun with your AppImage in the `output_dir` directory !
+2. Build docker image : `docker build -t appimage_building build_appimage/linux/x86_64` (You're not limited to the tag appimage_building)
+3. Create a folder output_dir at the root of the project
+4. Run command `docker run --mount type=bind,src="$(pwd)"/output_dir,target=/output_dir appimage_building`.
+5. Finally, have fun with your AppImage in the `output_dir` directory !
 
 ## Credits
 
