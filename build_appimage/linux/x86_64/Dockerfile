@@ -9,7 +9,6 @@ RUN apt-get install -y --no-install-recommends gvfs-libs glib-networking libgnut
 RUN apt-get install -y --no-install-recommends ca-certificates sudo
 ENV DEBIAN_FRONTEND teletype
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
-RUN useradd -ms /bin/bash docker
 USER docker
 WORKDIR /home/docker
 
