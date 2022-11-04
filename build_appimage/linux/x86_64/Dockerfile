@@ -8,8 +8,9 @@ RUN apt-get install -y --no-install-recommends libgtk-3-dev wget git curl
 RUN apt-get install -y --no-install-recommends gvfs-libs glib-networking libgnutls30
 RUN apt-get install -y --no-install-recommends ca-certificates sudo
 ENV DEBIAN_FRONTEND teletype
-USER developer
 ADD sudoers.txt /etc/sudoers
+RUN  useradd -m developer && echo "developer:developer" |  chpasswd &&  usermod -aG wheel developer
+USER developer
 WORKDIR /home/developer
 
 # setup NodeJS and Neutralino
